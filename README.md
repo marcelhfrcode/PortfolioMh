@@ -8,7 +8,7 @@ O projeto reúne informações sobre minha experiência profissional, formação
 
 Atualmente, meu foco está no desenvolvimento **Front-End**, principalmente com React, TypeScript e JavaScript, mas também tenho interesse e experiência com tecnologias Back-End e integração de APIs.
 
-## 🛠️ Tecnologias
+## Tecnologias
 
 * HTML5
 * CSS3
