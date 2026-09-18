@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marcel Henrique — Desenvolvedor Front-End</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <div class="wrap nav">
+          <div href="#top" class="avatar">
+            <img src="src/coalapng01.gif" alt="Logo Marcel Dev" />
+            <a href="#top" class="brand">Marcel<span>.</span>dev</a>
+          </div>
+
+          <button
+            class="navtoggle"
+            @click="menuOpen = !menuOpen"
+            aria-label="Abrir menu"
+          >
+            ☰
+          </button>
+          <nav class="links" :class="{open: menuOpen}">
+            <a href="#sobre" @click="menuOpen=false">Sobre</a>
+            <a href="#skills" @click="menuOpen=false">Skills</a>
+            <a href="#projeto" @click="menuOpen=false">Projeto</a>
+            <a href="#experiencia" @click="menuOpen=false">Experiência</a>
+            <a href="#contato" @click="menuOpen=false">Contato</a>
+          </nav>
+        </div>
+      </header>
+
+      <div id="top"></div>
+      <section class="hero" style="border-top: none">
+        <div class="wrap">
+          <div class="row">
+            <div>
+              <h1>Marcel Henrique</h1>
+              <p class="role">
+                Desenvolvedor Front-End com experiência em React, TypeScript e
+                integração com APIs REST, criando interfaces responsivas e
+                focadas em uma boa experiência de uso.
+              </p>
+              <div class="cta-row">
+                <a class="btn primary" href="#contato">Falar comigo</a>
+                <a
+                  class="btn ghost"
+                  href="https://educadoa.vercel.app"
+                  target="_blank"
+                  rel="noopener"
+                  >Ver projeto</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="sobre" class="about">
+        <div class="wrap">
+          <h2>Sobre</h2>
+          <p>
+            Minha experiência começou com suporte técnico e implantação de
+            sistemas ERP, onde desenvolvi bastante prática com SQL, análise de
+            problemas, testes, documentação e entendimento de processos. Com o
+            tempo, fui me aproximando do desenvolvimento e passei a focar no
+            front-end, trabalhando principalmente com React, TypeScript e
+            Tailwind CSS.
+          </p>
+          <p>
+            Além da parte técnica, desenvolvi experiência trabalhando em equipe
+            e me comunicando com diferentes áreas para entender necessidades,
+            organizar demandas e acompanhar processos e projetos. Tenho
+            facilidade para aprender novas tecnologias, gosto de compartilhar
+            conhecimento e também já atuei no apoio e treinamento de novos
+            colaboradores, ajudando na adaptação aos sistemas, processos e
+            atividades da equipe.
+          </p>
+          <div class="meta">
+            <div>
+              <b>Formação</b> Análise e Desenvolvimento de Sistemas — UniCesumar
+              (conclusão prevista em 06/2027)
+            </div>
+            <div><b>Idiomas</b> Português nativo, inglês intermediário</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills">
+        <div class="wrap">
+          <h2>Stack e ferramentas</h2>
+          <div class="skill-groups">
+            <div>
+              <h3>Front-end</h3>
+              <ul>
+                <li>React</li>
+                <li>TypeScript</li>
+                <li>JavaScript</li>
+                <li>Vue.js (Quasar)</li>
+                <li>HTML5 / CSS3</li>
+                <li>Tailwind CSS</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Back-end</h3>
+              <ul>
+                <li>Node.js</li>
+                <li>NestJS</li>
+                <li>APIs REST</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Banco de dados</h3>
+              <ul>
+                <li>PostgreSQL</li>
+                <li>SQL</li>
+                <li>Firebird</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Ferramentas</h3>
+              <ul>
+                <li>Git / GitHub</li>
+                <li>Figma</li>
+                <li>Vercel</li>
+                <li>Postman</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projeto">
+        <div class="wrap">
+          <h2>Projeto em destaque</h2>
+          <div class="project">
+            <div class="project-top">
+              <h3>EducaDoa</h3>
+              <a
+                class="visit"
+                href="https://educadoa.vercel.app"
+                target="_blank"
+                rel="noopener"
+                >educadoa.vercel.app ↗</a
+              >
+            </div>
+            <p>
+              Plataforma desenvolvida para conectar pessoas interessadas em
+              apoiar projetos educacionais e organizações sociais. O projeto
+              utiliza React, JavaScript e Tailwind CSS, com foco em
+              responsividade, componentes reutilizáveis e uma experiência
+              simples e intuitiva em diferentes dispositivos.
+            </p>
+            <div class="tags">
+              <span>React</span><span>JavaScript</span><span>Tailwind CSS</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="experiencia">
+        <div class="wrap">
+          <h2>Experiência</h2>
+
+          <div class="job" v-for="(job, i) in jobs" :key="i">
+            <div class="job-head">
+              <div>
+                <h3>{{ job.role }}</h3>
+                <div class="place">{{ job.company }}</div>
+              </div>
+              <button class="more" @click="job.open = !job.open">
+                {{ job.open ? 'ver menos' : 'ver detalhes' }}
+              </button>
+            </div>
+            <ul v-if="job.open">
+              <li v-for="(item, j) in job.items" :key="j">{{ item }}</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="contato">
+        <div class="wrap">
+          <h2>Contato</h2>
+          <div class="contact-links">
+            <a href="#" @click.prevent="copyEmail">
+              <div>
+                <span class="lbl">E-mail</span>
+                marcel.hfr1@gmail.com
+                <span class="copied" v-if="emailCopied">copiado</span>
+              </div>
+            </a>
+            <a href="https://w.app/2s30qh">
+              <div><span class="lbl">WhatsApp</span>(41) 9 9259-3444</div>
+            </a>
+            <a
+              href="https://linkedin.com/in/marcelhfr26"
+              target="_blank"
+              rel="noopener"
+            >
+              <div>
+                <span class="lbl">LinkedIn</span>linkedin.com/in/marcelhfr26
+              </div>
+            </a>
+            <a
+              href="https://github.com/marcelhfrcode"
+              target="_blank"
+              rel="noopener"
+            >
+              <div><span class="lbl">GitHub</span>github.com/marcelhfrcode</div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div class="wrap">Marcel Henrique — Front-End Developer</div>
+      </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.4.21/dist/vue.global.prod.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
